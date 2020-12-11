@@ -1,0 +1,9 @@
+--- original/org/joda/time/Partial.java
++++ fixed/org/joda/time/Partial.java
+@@ -458 +458 @@  public final class Partial
+             newTypes[i] = fieldType;
+-            newValues[i] = value;
++            if (fieldType != fieldType.clockhourOfDay()) {
++                newValues[i] = value;
++            }
+             System.arraycopy(iTypes, i, newTypes, i + 1, newTypes.length - i - 1);

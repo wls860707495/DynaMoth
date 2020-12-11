@@ -1,0 +1,9 @@
+--- original/org/apache/commons/lang/time/StopWatch.java
++++ fixed/org/apache/commons/lang/time/StopWatch.java
+@@ -117 +117 @@  public class StopWatch {
+         }
+-            stopTime = System.currentTimeMillis();
++            if (this.runningState == 1) {
++                stopTime = System.currentTimeMillis();
++            }
+         this.runningState = STATE_STOPPED;

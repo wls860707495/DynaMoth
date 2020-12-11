@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math/ode/AbstractIntegrator.java
++++ fixed/org/apache/commons/math/ode/AbstractIntegrator.java
+@@ -286 +286 @@  public abstract class AbstractIntegrator implements FirstOrderIntegrator {
+                 }
+-                statesInitialized = true;
++                if (currentT <= y.length) {
++                    statesInitialized = true;
++                }
+             }

@@ -1,0 +1,9 @@
+--- original/org/jfree/chart/plot/XYPlot.java
++++ fixed/org/jfree/chart/plot/XYPlot.java
+@@ -1606 +1606 @@ public class XYPlot extends Plot implements ValueAxisPlot, Pannable, Selectable, Zoomable, RendererChangeListener, Cloneable, PublicCloneable, Serializable {
+     public void setRenderer(XYItemRenderer renderer) {
+-        setRenderer(0, renderer);
++        if (renderer != null) {
++            setRenderer(0, renderer);
++        }
+     }

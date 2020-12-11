@@ -1,0 +1,9 @@
+--- original/org/joda/time/format/DateTimeParserBucket.java
++++ fixed/org/joda/time/format/DateTimeParserBucket.java
+@@ -358 +358 @@
+                 saveField(DateTimeFieldType.year(), iDefaultYear);
+-                return computeMillis(resetFields, text);
++                if (resetFields) {
++                    return computeMillis(resetFields, text);
++                }
+             }

@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
++++ fixed/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java
+@@ -316 +316 @@ public class BracketingNthOrderBrentSolver
+             System.arraycopy(x, signChangeIndex, x, signChangeIndex + 1, nbPoints - signChangeIndex);
+-            x[signChangeIndex] = nextX;
++            if (this.DEFAULT_ABSOLUTE_ACCURACY <= org.apache.commons.math.util.FastMath.max((double) xA, (double) yB)) {
++                x[signChangeIndex] = nextX;
++            }
+             System.arraycopy(y, signChangeIndex, y, signChangeIndex + 1, nbPoints - signChangeIndex);

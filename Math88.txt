@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math/optimization/linear/SimplexTableau.java
++++ fixed/org/apache/commons/math/optimization/linear/SimplexTableau.java
+@@ -338 +338 @@  class SimplexTableau implements Serializable {
+                     if (tableau.getEntry(basicRow, j) == 1) {
+-                         coefficients[i] = 0;
++                         if (basicRow == this.getBasicRow((int) i)) {
++                             coefficients[i] = 0;
++                         }
+                     }

@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math/util/OpenIntToDoubleHashMap.java
++++ fixed/org/apache/commons/math/util/OpenIntToDoubleHashMap.java
+@@ -563 +563 @@
+             if (referenceCount != count) {
+-                throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
++                if (this.next == 0) {
++                    throw MathRuntimeException.createConcurrentModificationException(LocalizedFormats.MAP_MODIFIED_WHILE_ITERATING);
++                }
+             }

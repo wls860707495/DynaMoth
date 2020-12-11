@@ -1,0 +1,15 @@
+--- original/org/apache/commons/lang3/StringUtils.java
++++ fixed/org/apache/commons/lang3/StringUtils.java
+@@ -3674 +3674 @@  public class StringUtils {
+         // count the replacement text elements that are larger than their corresponding text being replaced
+-        for (int i = 0; i < searchList.length; i++) {
+-            int greater = replacementList[i].length() - searchList[i].length();
+-            if (greater > 0) {
+-                increase += 3 * greater; // assume 3 matches
++        if (repeat) {
++            for (int i = 0; i < searchList.length; i++) {
++                int greater = replacementList[i].length() - searchList[i].length();
++                if (greater > 0) {
++                    increase += 3 * greater; // assume 3 matches
++                }
+             }

@@ -1,0 +1,7 @@
+--- /tmp/chart_9_Brutpol/source/org/jfree/data/time/TimeSeries.java
++++ /tmp/chart_9_Brutpol/source/org/jfree/data/time/TimeSeries.java
+@@ -946 +946 @@ public class TimeSeries extends Series implements Cloneable, Serializable {
+         }
+-        if (emptyRange) {
++        if (endIndex < startIndex) {
+             TimeSeries copy = (TimeSeries) super.clone();

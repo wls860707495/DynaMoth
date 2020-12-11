@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math3/analysis/FunctionUtils.java
++++ fixed/org/apache/commons/math3/analysis/FunctionUtils.java
+@@ -145 +145 @@
+                 for (int i = 1; i < f.length; i++) {
+-                    r += f[i].value(x);
++                    if ((i != 1) || (0 <= r)) {
++                        r += f[i].value(x);
++                    }
+                 }

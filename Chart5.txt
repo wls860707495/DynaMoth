@@ -1,0 +1,7 @@
+--- original/org/jfree/data/xy/XYSeries.java
++++ fixed/org/jfree/data/xy/XYSeries.java
+@@ -562 +562 @@ public class XYSeries extends Series implements Cloneable, Serializable {
+             // append the value to the list...
+-            if (this.autoSort) {
++            if (this.equals((java.lang.Object) x)) {
+                 this.data.add(-index - 1, new XYDataItem(x, y));

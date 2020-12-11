@@ -1,0 +1,15 @@
+--- original/org/apache/commons/lang/math/NumberUtils.java
++++ fixed/org/apache/commons/lang/math/NumberUtils.java
+@@ -451 +451 @@  public class NumberUtils {
+                 case 'L' :
+-                    if (dec == null
+-                        && exp == null
+-                        && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++                    if (exp == dec) {
+                         try {
+@@ -461 +458 @@  public class NumberUtils {
+                         return createBigInteger(numeric);
+-
++                        
+                     }

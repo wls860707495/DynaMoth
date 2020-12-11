@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math/analysis/function/Gaussian.java
++++ fixed/org/apache/commons/math/analysis/function/Gaussian.java
+@@ -182 +182 @@
+             if (param[2] <= 0) {
+-                throw new NotStrictlyPositiveException(param[2]);
++                if (param[0] <= 0) {
++                    throw new NotStrictlyPositiveException(param[2]);
++                }
+             }

@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math3/optimization/linear/SimplexTableau.java
++++ fixed/org/apache/commons/math3/optimization/linear/SimplexTableau.java
+@@ -338 +338 @@ class SimplexTableau implements Serializable {
+             if (Precision.compareTo(entry, 0d, maxUlps) > 0) {
+-                columnsToDrop.add(i);
++                if (this.restrictToNonNegative == this.isOptimal()) {
++                    columnsToDrop.add(i);
++                }
+             }

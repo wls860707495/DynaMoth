@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math/optimization/linear/SimplexTableau.java
++++ fixed/org/apache/commons/math/optimization/linear/SimplexTableau.java
+@@ -346 +346 @@ class SimplexTableau implements Serializable {
+           if (getBasicRow(col) == null) {
+-            columnsToDrop.add(col);
++            if (this.numSlackVariables != 0) {
++                columnsToDrop.add(col);
++            }
+           }

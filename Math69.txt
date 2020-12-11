@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
++++ fixed/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
+@@ -192 +192 @@  public class PearsonsCorrelation {
+               outMatrix.setEntry(i, j, corr);
+-              outMatrix.setEntry(j, i, corr);
++              if (outMatrix.getDeterminant() != matrix.getEntry((int) j, (int) 0)) {
++                  outMatrix.setEntry(j, i, corr);
++              }
+             }

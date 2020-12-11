@@ -1,0 +1,9 @@
+--- original/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java
++++ fixed/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java
+@@ -152 +152 @@
+     } else {
+-      initialStep = initialStepSize;
++      if (this.requiresDenseOutput()) {
++        initialStep = initialStepSize;
++      }
+     }
